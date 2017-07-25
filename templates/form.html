@@ -1,0 +1,115 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <!-- //* Successful reboot *// -->
+        <div class="col-md-6">
+          {% with messages = get_flashed_messages(category_filter=["message"]) %}
+          {% if messages %}
+            <div class="alert alert-success">
+              <ul>
+                {%- for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor -%}
+              </ul>
+            </div>
+          {% endif %}
+          {% endwith %}
+        </div>
+        <!-- //* Failed reboot *// -->
+        <div class="col-md-6">
+          {% with errors = get_flashed_messages(category_filter=["error"]) %}
+          {% if errors %}
+            <div class="alert alert-danger">
+              <ul>
+                {%- for msg in errors %}
+                  <li>{{ msg }}</li>
+                {% endfor -%}
+              </ul>
+            </div>
+          {% endif %}
+          {% endwith %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="POST" action="{{ url_for('form') }}">
+                {{ form.csrf_token }}
+                <h3>Building 100</h3>
+                {{ form.B100_Enc_Dec }}
+                {{ form.B100_Net }}
+                 <h3>Building 200</h3>
+                {{ form.B200_Enc_Dec }}
+                {{ form.B200_Net }}
+                <h3>Building 201 North</h3>
+                {{ form.B201N_Enc_Dec }}
+                {{ form.B201N_Net }}
+                <h3>Building 201 South</h3>
+                {{ form.B201S_Enc_Dec }}
+                {{ form.B201S_Net }}
+                <h3>Building 400</h3>
+                {{ form.B400_Enc_Dec }}
+                {{ form.B400_Net }}
+                <h3>Building 400 Add.</h3>
+                {{ form.B400A_Enc_Dec }}
+                {{ form.B400A_Net }}
+                <h3>Building 501</h3>
+                {{ form.B501_Enc_Dec }}
+                {{ form.B501_Net }}
+        </div>
+        <div class="col-md-4">
+                <h3>Building 601</h3>
+                {{ form.B601_Enc_Dec }}
+                {{ form.B601_Net }}
+                <h3>Building 602</h3>
+                {{ form.B602_Enc_Dec }}
+                {{ form.B602_Net }}
+                <h3>Building 603</h3>
+                {{ form.B603_Enc_Dec }}
+                {{ form.B603_Net }}
+                <h3>Building 606</h3>
+                {{ form.B606_Enc_Dec }}
+                {{ form.B606_Net }}
+             <h3>Building 608</h3>
+                {{ form.B608_Enc_Dec }}
+                {{ form.B608_Net }}
+                <h3>Building 611</h3>
+                {{ form.B611_Enc_Dec }}
+                {{ form.B611_Net }}
+                <h3>Building 800</h3>
+                {{ form.B800_Enc_Dec }}
+                {{ form.B800_Net }}
+            <h3>Building 2000 South</h3>
+                {{ form.B2000S_Enc_Dec }}
+                {{ form.B2000S_Net }}
+
+        </div>
+        <div class="col-md-4">
+                <h3>Building 2000 North</h3>
+                {{ form.B2000N_Enc_Dec }}
+                {{ form.B2000N_Net }}
+                <h3>Building 2000 Add.</h3>
+                {{ form.B2kA_Enc_Dec }}
+                {{ form.B2kA_Net }}
+                <h3>Building 3000 A-S</h3>
+                {{ form.B3000ASL_Enc_Dec }}
+                {{ form.B3000ASL_Net }}
+                <h3>Building 3000 A-N</h3>
+                {{ form.B3000ANL_Enc_Dec }}
+                {{ form.B3000ANL_Net }}
+                <h3>Childcare Building</h3>
+                {{ form.Childcare_Enc_Dec }}
+                {{ form.Childcare_Net }}
+                <h3>Team Member Services</h3>
+                {{ form.TMS_Enc_Dec }}
+                {{ form.TMS_Net }}
+                <h3>Fitness Center</h3>
+                {{ form.Fit_Enc_Dec }}
+                {{ form.Fit_Net }}
+            <button type="submit" class="btn btn-success btn-lg btn-block">Reboot</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
