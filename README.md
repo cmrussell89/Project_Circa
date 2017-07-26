@@ -32,7 +32,7 @@ This project was written in Flask, a microframework for Python. The project was 
     5. Broke buildings into tabs for easier navigation
   
 * v1.0(rel: 21-07-2017)
-    1. Dubbed CRC for 'Consolodated Reboot Center'
+    1. Dubbed CRC for 'Consolidated Reboot Center'
     2. Shaky, but functioning.
 
 ## Who is Circa
