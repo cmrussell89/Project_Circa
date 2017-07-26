@@ -1,5 +1,5 @@
-# CIRCA
-> Centralized IP-Based Reboot Center Application.
+[alt text](http://i.imgur.com/2wToUmP.png "CIRCA Logo")
+> CIRCA | Centralized IP-Based Reboot Center Application.
 
 This application is designed to make a post request to multiple VOIP devices to run a reboot cgi script if the TTL is surpassed.
 
