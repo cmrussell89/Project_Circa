@@ -6768,10 +6768,10 @@ button.close {
 .logo {
     padding-top: 10px;
 }
-.topLogo {
+.header_img {
     height: auto;
     width: 100px;
-    margin-top: -8px;
+    margin-top: -6px;
 
 }
 /*# sourceMappingURL=bootstrap.css.map */

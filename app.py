@@ -201,7 +201,7 @@ class RebootForm(FlaskForm):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return redirect(url_for('form'))
 
 
 @app.route('/form', methods=['GET', 'POST'])
