@@ -3,8 +3,6 @@
 
 This application is designed to make a post request to multiple VOIP devices to run a reboot cgi script if the TTL is surpassed.
 
-![](header.png)
-
 ## Installation
 
 Only Windows is supported at this time.
