@@ -21,17 +21,24 @@ This project was written in Flask, a microframework for Python. The project was 
 > _Note:_ Severe performance degradation when using IE10 or below.
 
 ## Release History
-
+* v1.5(rel:26-07-2017)
+  1. Added ability to reboot whole building at once.
+  2. Added dismissable pass/fail reports.
+  
 * v1.2(rel: 25-07-2017)
     1. Officially named _Circa_ (Centralized IP-Based Reboot Center Application),
     2. Added error handling,
     3. Added flash messaging,
     4. Added cool logo,
-    5. Broke buildings into tabs for easier navigation
   
 * v1.0(rel: 21-07-2017)
     1. Dubbed CRC for 'Consolidated Reboot Center'
     2. Shaky, but functioning.
+
+## Planned Updates
+
+1. A form to add/remove devices/buildings
+2. Live up/down status indicators
 
 ## Who is Circa
 
