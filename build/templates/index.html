@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circa | By Linkology</title>
+    <!--//CSS Links //-->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">CIRCA</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="{{ url_for('form') }}">My Site</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#supportModal">Support</a></li>
+          <!--  Support Modal -->
+          <div class="modal fade" id="supportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><img src="../static/img/circaNew.png" class="topLogo"> by Linkology</h4>
+                </div>
+                <div class="modal-body">
+                    This application was designed for specific use by TMMK. If you are having any issues please do not
+                    hesitate to call <b>Linkology at 1-859-491-7711</b>. If you need technical assistance you can email
+                    the author of this application at crussell@linkologyusa.com.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+             </div>
+            </div>
+          </div>
+          <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+          <!-- About Modal -->
+          <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+             <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><img src="../static/img/circaNew.png" class="topLogo"> by Linkology</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>Welcome to Circa</h2>
+            <p>Circa is a code name for this web app. It's easier than saying "the <b>c</b>entralized <b>i</b>p-based
+                <b>r</b>eboot <b>c</b>enter <b>a</b>pplication". Circa makes rebooting multiple devices easy and saves
+                time. Simply select the building or individual devices that need to be reset, click the <i>reboot</i> button
+                and let Circa do the rest for you.</p>
+        <h2>How It Works</h2>
+        <p>Circa is built using Flask which is  microframework for Python that allows for the rapid development of
+        web applications. Flask serves up a form that is hard coded with the ip information of your devices. When selected
+        the form sends a POST request to the url that runs a factory cgi script that safely reboots the device. Once this POST
+        request returns if the function exited successfully or not it will return the form with reports at the top.
+        One report will be in green, being the list of successfully rebooted devices. The other will be in red as they
+            have failed for one reason or another.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+             </div>
+            </div>
+          </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <h3><center><img src="/static/img/circaNew.png"><br>
+                <small>Powered By <img src="/static/img/linkologySmallFA.png" class="logo"></small></center></h3>
+        </div>
+    </div>
+</div>
+{% block content %}
+<div class="container">
+    <div class="row">
+
+    </div>
+</div>
+{% endblock %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../static/js/jquery-3.2.1.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+$('#b100All').click(function () {
+    $('ul.b100 li input').prop('checked', this.checked);
+});
+$('#b200All').click(function () {
+    $('ul.b200 li input').prop('checked', this.checked);
+});
+$('#b201nAll').click(function () {
+    $('ul.b201n li input').prop('checked', this.checked);
+});
+$('#b201sAll').click(function () {
+    $('ul.b201s li input').prop('checked', this.checked);
+});
+$('#b400All').click(function () {
+    $('ul.b400 li input').prop('checked', this.checked);
+});
+$('#b400aAll').click(function () {
+    $('ul.b400a li input').prop('checked', this.checked);
+});
+$('#b501All').click(function () {
+    $('ul.b501 li input').prop('checked', this.checked);
+});
+$('#b601All').click(function () {
+    $('ul.b601 li input').prop('checked', this.checked);
+});
+$('#b602All').click(function () {
+    $('ul.b602 li input').prop('checked', this.checked);
+});
+$('#b603All').click(function () {
+    $('ul.b603 li input').prop('checked', this.checked);
+});
+$('#b606All').click(function () {
+    $('ul.b606 li input').prop('checked', this.checked);
+});
+$('#b608All').click(function () {
+    $('ul.b608 li input').prop('checked', this.checked);
+});
+$('#b611All').click(function () {
+    $('ul.b611 li input').prop('checked', this.checked);
+});
+$('#b800All').click(function () {
+    $('ul.b800 li input').prop('checked', this.checked);
+});
+$('#b2000sAll').click(function () {
+    $('ul.b2000s li input').prop('checked', this.checked);
+});
+$('#b2000nAll').click(function () {
+    $('ul.b2000n li input').prop('checked', this.checked);
+});
+$('#b2000aAll').click(function () {
+    $('ul.b2000a li input').prop('checked', this.checked);
+});
+$('#b3000asAll').click(function () {
+    $('ul.b3000as li input').prop('checked', this.checked);
+});
+$('#b3000anAll').click(function () {
+    $('ul.b3000an li input').prop('checked', this.checked);
+});
+$('#bccAll').click(function () {
+    $('ul.bcc li input').prop('checked', this.checked);
+});
+$('#btmsAll').click(function () {
+    $('ul.btms li input').prop('checked', this.checked);
+});
+$('#bfitAll').click(function () {
+    $('ul.bfit li input').prop('checked', this.checked);
+});
+</script>
+</body>
+</html>

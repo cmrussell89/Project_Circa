@@ -1,0 +1,142 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <!-- //* Successful reboot *// -->
+        <div class="col-md-6">
+          {% with messages = get_flashed_messages(category_filter=["message"]) %}
+          {% if messages %}
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+              <ul>
+                {%- for message in messages %}
+                  <li>{{ message }}</li>
+                {% endfor -%}
+              </ul>
+            </div>
+          {% endif %}
+          {% endwith %}
+        </div>
+        <!-- //* Failed reboot *// -->
+        <div class="col-md-6">
+          {% with errors = get_flashed_messages(category_filter=["error"]) %}
+          {% if errors %}
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+              <ul>
+                {%- for msg in errors %}
+                  <li>{{ msg }}</li>
+                {% endfor -%}
+              </ul>
+            </div>
+          {% endif %}
+          {% endwith %}
+        </div>
+    </div>
+    <div class="row">
+        <form method="POST" action="{{ url_for('form') }}">
+            <div class="col-md-4">
+                {{ form.csrf_token }}
+                <h3>Building 100</h3>
+                <input type="checkbox" id="b100All"/>Select Whole Building
+                {{ form.B100_Enc_Dec(class_="b100") }}
+                {{ form.B100_Net(class_="b100") }}
+                 <h3>Building 200</h3>
+                <input type="checkbox" id="b200All"/>Select Whole Building
+                {{ form.B200_Enc_Dec(class="b200") }}
+                {{ form.B200_Net(class="b200") }}
+                <h3>Building 201 North</h3>
+                <input type="checkbox" id="b201nAll"/>Select Whole Building
+                {{ form.B201N_Enc_Dec(class="b201n") }}
+                {{ form.B201N_Net(class="b201n") }}
+                <h3>Building 201 South</h3>
+                <input type="checkbox" id="b201sAll"/>Select Whole Building
+                {{ form.B201S_Enc_Dec(class="b201s") }}
+                {{ form.B201S_Net(class="b201s") }}
+                <h3>Building 400</h3>
+                <input type="checkbox" id="b400All"/>Select Whole Building
+                {{ form.B400_Enc_Dec(class="b400") }}
+                {{ form.B400_Net(class="b400") }}
+                <h3>Building 400 Add.</h3>
+                <input type="checkbox" id="b400aAll"/>Select Whole Building
+                {{ form.B400A_Enc_Dec(class="b400a") }}
+                {{ form.B400A_Net(class="b400a") }}
+                <h3>Building 501</h3>
+                <input type="checkbox" id="b501All"/>Select Whole Building
+                {{ form.B501_Enc_Dec(class="b501") }}
+                {{ form.B501_Net(class="b501") }}
+            </div>
+            <div class="col-md-4">
+                <h3>Building 601</h3>
+                <input type="checkbox" id="b601All"/>Select Whole Building
+                {{ form.B601_Enc_Dec(class="b601") }}
+                {{ form.B601_Net(class="b601") }}
+                <h3>Building 602</h3>
+                <input type="checkbox" id="b602All"/>Select Whole Building
+                {{ form.B602_Enc_Dec(class="b602") }}
+                {{ form.B602_Net(class="b602") }}
+                <h3>Building 603</h3>
+                <input type="checkbox" id="b603All"/>Select Whole Building
+                {{ form.B603_Enc_Dec(class="b603") }}
+                {{ form.B603_Net(class="b603") }}
+                <h3>Building 606</h3>
+                <input type="checkbox" id="b606All"/>Select Whole Building
+                {{ form.B606_Enc_Dec(class="b606") }}
+                {{ form.B606_Net(class="b606") }}
+                <h3>Building 608</h3>
+                <input type="checkbox" id="b608All"/>Select Whole Building
+                {{ form.B608_Enc_Dec(class="b608") }}
+                {{ form.B608_Net(class="b608") }}
+                <h3>Building 611</h3>
+                <input type="checkbox" id="b611All"/>Select Whole Building
+                {{ form.B611_Enc_Dec(class="b611") }}
+                {{ form.B611_Net(class="b611") }}
+                <h3>Building 800</h3>
+                <input type="checkbox" id="b800All"/>Select Whole Building
+                {{ form.B800_Enc_Dec(class="b800") }}
+                {{ form.B800_Net(class="b800") }}
+                <h3>Building 2000 South</h3>
+                <input type="checkbox" id="b2000sAll"/>Select Whole Building
+                {{ form.B2000S_Enc_Dec(class="b2000s") }}
+                {{ form.B2000S_Net(class="b2000s") }}
+            </div>
+            <div class="col-md-4">
+                <h3>Building 2000 North</h3>
+                <input type="checkbox" id="b2000nAll"/>Select Whole Building
+                {{ form.B2000N_Enc_Dec(class="b2000n") }}
+                {{ form.B2000N_Net(class="b2000n") }}
+                <h3>Building 2000 Add.</h3>
+                <input type="checkbox" id="b2000aAll"/>Select Whole Building
+                {{ form.B2kA_Enc_Dec(class="b2000a") }}
+                {{ form.B2kA_Net(class="b2000a") }}
+                <h3>Building 3000 A-S</h3>
+                <input type="checkbox" id="b3000asAll"/>Select Whole Building
+                {{ form.B3000ASL_Enc_Dec(class="b3000as") }}
+                {{ form.B3000ASL_Net(class="b3000as") }}
+                <h3>Building 3000 A-N</h3>
+                <input type="checkbox" id="b3000anAll"/>Select Whole Building
+                {{ form.B3000ANL_Enc_Dec(class="b3000an") }}
+                {{ form.B3000ANL_Net(class="b3000an") }}
+                <h3>Childcare Building</h3>
+                <input type="checkbox" id="bccAll"/>Select Whole Building
+                {{ form.Childcare_Enc_Dec(class="bcc") }}
+                {{ form.Childcare_Net(class="bcc") }}
+                <h3>Team Member Services</h3>
+                <input type="checkbox" id="btmsAll"/>Select Whole Building
+                {{ form.TMS_Enc_Dec(class="btms") }}
+                {{ form.TMS_Net(class="btms") }}
+                <h3>Fitness Center</h3>
+                <input type="checkbox" id="bfitAll"/>Select Whole Building
+                {{ form.Fit_Enc_Dec(class="bfit") }}
+                {{ form.Fit_Net(class="bfit") }}
+            <button type="submit" class="btn btn-success btn-lg btn-block">Reboot</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
