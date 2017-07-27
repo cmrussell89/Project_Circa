@@ -42,6 +42,8 @@
         <form method="POST" action="{{ url_for('form') }}">
             <div class="col-md-4">
                 {{ form.csrf_token }}
+                <h3>Whole Site Reboot</h3>
+                <input type="checkbox" id="MasterKill">Select All Buildings
                 <h3>Building 100</h3>
                 <input type="checkbox" id="b100All"/>Select Whole Building
                 {{ form.B100_Enc_Dec(class_="b100") }}

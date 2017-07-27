@@ -201,7 +201,7 @@ class RebootForm(FlaskForm):
 
 @app.route('/')
 def index():
-    return redirect(url_for('formfgfggf'))
+    return redirect(url_for('form'))
 
 
 @app.route('/form', methods=['GET', 'POST'])
@@ -217,7 +217,7 @@ def form():
                         form.TMS_Enc_Dec.data + form.Fit_Enc_Dec.data)
         for ip_address in ip_addresses:
             try:
-                requests.post('http://{}/rc.cgi?L=uirreboot.html&c=99'.format(ip_address))
+                requests.get('http://{}/rc.cgi?L=uirreboot.html&c=99'.format(ip_address))
                 flash('rebooting {}'.format(ip_address))
             except Exception:
                 flash('{} did not reboot. It may be offline.'.format(ip_address), 'error')
@@ -229,7 +229,7 @@ def form():
                            form.Childcare_Net.data + form.TMS_Net.data + form.Fit_Net.data)
         for ip_address_nr in ip_addresses_nr:
             try:
-                requests.post('http://{}/setup.cgi?L=uireboot2.html&R'.format(ip_address_nr))
+                requests.get('http://{}/setup.cgi?L=uireboot2.html&R'.format(ip_address_nr))
                 flash('rebooting {}'.format(ip_address_nr))
             except Exception:
                 flash('{} did not reboot. It may be offline.'.format(ip_address_nr), 'error')
